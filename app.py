@@ -192,6 +192,8 @@ def main():
                         
                     except Exception as e:
                         st.error(f"❌ Error: {str(e)}")
+        else:
+            st.info("PLAN.md not found in the current directory.")
     
     # Main content area
     if st.session_state.vector_db_built:
