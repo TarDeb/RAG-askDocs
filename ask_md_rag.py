@@ -8,12 +8,12 @@ client = chromadb.PersistentClient(path="./chroma_db")
 # Try to get existing collection
 try:
     collection = client.get_collection("md_chunks")
-    print("✅ Connected to vector database!")
+    print(" Connected to vector database!")
 except:
-    print("❌ Vector database not found. Please run 'python build_vector_db.py' first!")
+    print(" Vector database not found. Please run 'python build_vector_db.py' first!")
     exit()
 
-print("🤖 RAG Query System - Ask questions about your document!")
+print("RAG Query System - Ask questions about your document!")
 print("Type 'exit' to quit\n")
 
 while True:
@@ -24,26 +24,26 @@ while True:
             break
         
         if not question.strip():
-            print("❓ Please enter a valid question.")
+            print("Please enter a valid question.")
             continue
         
-        print("🔍 Searching...")
+        print(" Searching...")
         q_emb = model.encode(question).tolist()
         results = collection.query(query_embeddings=[q_emb], n_results=3)
         
         if not results['documents'][0]:
-            print("❌ No relevant documents found.")
+            print("No relevant documents found.")
             continue
         
-        print(f"\n✅ Found {len(results['documents'][0])} relevant chunks:\n")
+        print(f"\n Found {len(results['documents'][0])} relevant chunks:\n")
         for i, doc in enumerate(results["documents"][0], 1):
             print(f"--- Result {i} ---")
             print(f"{doc[:300]}...")
             print()
     
     except KeyboardInterrupt:
-        print("\n👋 Goodbye!")
+        print("\n Goodbye!")
         break
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
         continue
