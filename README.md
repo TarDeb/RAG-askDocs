@@ -4,12 +4,12 @@ A Retrieval-Augmented Generation (RAG) system that allows you to query your mark
 
 ## Features
 
-- 📄 Process markdown documents
-- 🔍 Semantic search using sentence transformers
-- 💾 Persistent vector database with ChromaDB
-- 🤖 Interactive query interface (CLI and Web UI)
-- 🌐 Modern web interface with Streamlit
-- 📊 Visual relevance scoring
+-  Process markdown documents
+-  Semantic search using sentence transformers
+-  Persistent vector database with ChromaDB
+-  Interactive query interface (CLI and Web UI)
+-  Modern web interface with Streamlit
+-  Visual relevance scoring
 
 ## Installation
 
