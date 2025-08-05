@@ -29,10 +29,6 @@ pip install -r requirements.txt
 ### Option 1: Web Interface (Recommended)
 
 1. Start the web application:
-```bash
-streamlit run app.py
-```
-*Or double-click `run_ui.bat` on Windows*
 
 2. Open your browser to the displayed URL (usually http://localhost:8501)
 
@@ -69,13 +65,7 @@ RAG-mydoc/
 ```
 
 ## How it works
-
 1. **Document Processing**: Markdown files are chunked and embedded using SentenceTransformers
 2. **Vector Storage**: Embeddings are stored in ChromaDB for fast retrieval
 3. **Query Processing**: User questions are embedded and matched against stored chunks
 4. **Results**: Most relevant document chunks are returned
-
-## Requirements
-
-- Python 3.7+
-- See `requirements.txt` for package dependencies
